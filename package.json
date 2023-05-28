@@ -1,0 +1,26 @@
+{
+  "name": "lightningjs-snippets",
+  "displayName": "LightningJS Snippets",
+  "description": "Code Snippents for lightningJS",
+  "publisher": "anand-patel",
+  "version": "1.0.2",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "repository": {
+        "type": "git",
+        "url": ""
+    },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

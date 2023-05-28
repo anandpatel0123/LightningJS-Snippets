@@ -1,0 +1,646 @@
+{
+  "LightningJS Component": {
+    "prefix": ["ljscomponent", "!comp"],
+    "body": [
+      "import { Lightning } from \"@lightningjs/sdk\";",
+      "",
+      "export default class $1 extends Lightning.Component {",
+      "   static _template() {",
+      "       return {",
+      "           $2",
+      "       }",
+      "   }",
+      "",
+      "   _init() {",
+      "   }",
+      "",
+      "   _getFocused() {",
+      "  }",
+      "",
+      "  static _states() {",
+      "    return [];",
+      "  }",
+      "}"
+    ],
+    "description": "Create a new LightningJS component"
+  },
+  "LightningJS Static States": {
+    "prefix": ["ljsstates", "!states"],
+    "body": [
+      "static _states() {",
+      "  return [",
+      "    class $1 extends this {",
+      "      \\$enter() {",
+      "        // State enter code",
+      "      },",
+      "      \\$exit() {",
+      "        // State exit code",
+      "      }",
+      "    },",
+      "    // Add more states here",
+      "  ];",
+      "}"
+    ],
+    "description": "Handle static states in LightningJS"
+  },
+  "FireAncestor Function": {
+    "prefix": ["!fireancestor", "ljsfireancestor"],
+    "body": ["this.fireAncestors('$1', $2);"],
+    "description": "Fire the `fireAncestor` method in LightningJS"
+  },
+  "LightningJS Tag Function": {
+    "prefix": ["ljstag", "!tag"],
+    "body": ["this.tag(\"$1\")$2"],
+    "description": "Use the `tag` function in LightningJS"
+  },
+  "LightningJS Image Object": {
+    "prefix": ["ljsimageobj", "!image"],
+    "body": ["$1: {", "  w: $2,", "  h: $3,", "  src: '$4'", "},"],
+    "description": "Create a LightningJS image object"
+  },
+  "LightningJS Text Object": {
+    "prefix": ["ljstextobj", "!text"],
+    "body": [
+      "$1: {",
+      "  text: {",
+      "    text: '$2',",
+      "    fontFace: '$3',",
+      "    fontSize: '$4',",
+      "    fontStyle: '$5',",
+      "    textColor: '$6'",
+      "  }",
+      "},"
+    ],
+    "description": "Create a LightningJS text object"
+  },
+  "LightningJS Animation Sequence": {
+    "prefix": ["ljsanimation", "!animation"],
+    "body": [
+      "this.tag('$1').animation({",
+      "  duration: $2,",
+      "  delay: $3,",
+      "  repeat: $4,",
+      "  stopMethod: '$5',",
+      "  actions: [",
+      "    { p: '$6', v: $7 },",
+      "  ]",
+      "})"
+    ],
+    "description": "Add an animation sequence to a LightningJS component"
+  },
+  "LightningJS Signal Handler": {
+    "prefix": ["ljssignal", "!signal"],
+    "body": [
+      "this.signal('$1', function($2) {",
+      "  // Signal handler code",
+      "});"
+    ],
+    "description": "Add a signal handler to a LightningJS component"
+  },
+  "LightningJS SetState Function": {
+    "prefix": ["setState", "!setstate"],
+    "body": "this._setState('$1')"
+  },
+
+  "LightningJS Patch Method": {
+    "prefix": ["ljspatch", "!patch"],
+    "body": ["this.patch({", "  $1: $2", "});"],
+    "description": "Use the `patch` method in LightningJS"
+  },
+  "LightningJS GetFocused Method": {
+    "prefix": ["ljsgetfocused", "!getfocused"],
+    "body": ["_getFocused() {", "  return this.tag(\"$1\");", "}"],
+    "description": "Handle the `getFocused` method in LightningJS"
+  },
+
+  "LightningJS Focus": {
+    "prefix": ["!focus", "focus"],
+    "body": "_focus(){\"$1\"}",
+    "description": "Component receives focus"
+  },
+  "LightningJS UnFocus": {
+    "prefix": ["!unfocus", "unfocus"],
+    "body": "_unfocus(){\"$1\"}",
+    "description": "Component receives focus"
+  },
+
+  "LightningJS handleEnter Method": {
+    "prefix": ["handleEnter", "!henter"],
+    "body": ["_handleEnter(){\"$1\"}"],
+    "description": "Use the `handleEnter` method in LightningJS"
+  },
+  "LightningJS handleBack Method": {
+    "prefix": ["handleBack", "!hback"],
+    "body": ["_handleBack(){\"$1\"}"],
+    "description": "Use the `handleBack` method in LightningJS"
+  },
+  "LightningJS handleLeft Method": {
+    "prefix": ["handleLeft", "!hleft"],
+    "body": ["_handleLeft(){\"$1\"}"],
+    "description": "Use the `handleLeft` method in LightningJS"
+  },
+  "LightningJS handleRight Method": {
+    "prefix": ["handleRight", "!hright"],
+    "body": ["_handleRight(){\"$1\"}"],
+    "description": "Use the `handleRight` method in LightningJS"
+  },
+  "LightningJS handleUp Method": {
+    "prefix": ["handleUp", "!hup"],
+    "body": ["_handleUp(){\"$1\"}"],
+    "description": "Use the `handleUp` method in LightningJS"
+  },
+  "LightningJS handleDown Method": {
+    "prefix": ["handleDown", "!hdown"],
+    "body": ["_handleDown(){\"$1\"};"],
+    "description": "Use the `handleDown` method in LightningJS"
+  },
+  "LightningJS handleAppClose Method": {
+    "prefix": ["handleAppClose", "!happalose"],
+    "body": ["_handleAppClose(){", " this.application.closeApp(); $1", "};"],
+    "description": "Use the `handleAppClose` method in LightningJS"
+  },
+  "LightningJS RouterNavigate Method": {
+    "prefix": ["RouterNavigate", "!navigate"],
+    "body": ["Router.navigate(\"$1\")"],
+    "description": "Use the `RouterNavigate` method in LightningJS"
+  },
+
+  "LightningJS Capture Key Event": {
+    "prefix": ["ljscapturekey", "!capturekey"],
+    "body": [
+      "_captureKey(event) {",
+      "  const key = event.keyCode || event.charCode;",
+      "  switch (key) {",
+      "    case $1:",
+      "      $2",
+      "      break;",
+      "    case $3:",
+      "      $4",
+      "      break;",
+      "    // Add more cases for other key codes",
+      "  }",
+      "}"
+    ],
+    "description": "Capture key events in LightningJS"
+  },
+  "LightningJS Rectangle Default": {
+    "prefix": ["ljsrectdefault", "!rectangle"],
+    "body": [
+      "RectangleDefault: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true",
+      "}"
+    ],
+    "description": "Create a rectangle with default color in LightningJS"
+  },
+  "LightningJS Rectangle with Color": {
+    "prefix": ["ljsrectcolor", "!rectanglecolor"],
+    "body": [
+      "RectangleWithColor: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true, color: $5",
+      "}"
+    ],
+    "description": "Create a rectangle with custom color in LightningJS"
+  },
+  "LightningJS Rectangle with Gradient (Top to Bottom)": {
+    "prefix": ["ljsrectgradienttb", "!rectanglegradientttb"],
+    "body": [
+      "RectangleWithGradientTopBottom: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true, colorTop: $5, colorBottom: $6",
+      "}"
+    ],
+    "description": "Create a rectangle with gradient color (top to bottom) in LightningJS"
+  },
+  "LightningJS Rectangle with Gradient (Left to Right)": {
+    "prefix": ["ljsrectgradientlr", "!rectanglegradienltr"],
+    "body": [
+      "RectangleWithGradientLeftRight: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true, colorLeft: $5, colorRight: $6",
+      "}"
+    ],
+    "description": "Create a rectangle with gradient color (left to right) in LightningJS"
+  },
+  "LightningJS Rectangle with Gradient (Diagonal)": {
+    "prefix": ["ljsrectgradientdiag", "!rectanglegradiendiagonal"],
+    "body": [
+      "RectangleWithGradientDiagonal: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true, colorUl: $5, colorUr: $6, colorBr: $7, colorBl: $8",
+      "}"
+    ],
+    "description": "Create a rectangle with gradient color (diagonal) in LightningJS"
+  },
+  "LightningJS Rectangle with Gradient (Diagonal, Mixed Colors)": {
+    "prefix": ["ljsrectgradientdiagmixed", "!rectanglegradiendiagonalmixed"],
+    "body": [
+      "RectangleWithGradientDiagonalMixed: {",
+      "  x: $1, y: $2, w: $3, h: $4, rect: true, colorLeft: $5, colorBr: $6, colorUr: $7",
+      "}"
+    ],
+    "description": "Create a rectangle with gradient color (diagonal, mixed colors) in LightningJS"
+  },
+
+  "LightningJS Round Rectangle": {
+    "prefix": ["ljsroundrect", "!roundrect"],
+    "body": [
+      "RoundRectangle: {",
+      "  texture: lng.Tools.getRoundRect($2, $3, $4, $5, $6, $7, $8)",
+      "}"
+    ],
+    "description": "Create a round rectangle in LightningJS"
+  },
+  "LightningJS Shadow": {
+    "prefix": ["ljsshadow", "!shadowrect"],
+    "body": [
+      "Shadow: {",
+      "  x: $1,",
+      "  y: $2,",
+      "  zIndex: $3,",
+      "  color: $4,",
+      "  texture: lng.Tools.getShadowRect($5, $6, $7, $8, $9)",
+      "}"
+    ],
+    "description": "Create a shape with shadow in LightningJS"
+  },
+  "LightningJS SVG": {
+    "prefix": ["ljssvg", "!svgtexture"],
+    "body": [
+      "Svg: {",
+      "  x: $1,",
+      "  y: $2,",
+      "  zIndex: $3,",
+      "  texture: lng.Tools.getSvgTexture(Utils.asset('$4'), $5, $6)",
+      "}"
+    ],
+    "description": "Create a shape from SVG in LightningJS"
+  },
+  "LightningJS Fade Out": {
+    "prefix": ["ljsfadeout", "!fadeoutshader"],
+    "body": [
+      "FadeOut: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  rect: true,",
+      "  shader: {",
+      "    type: Lightning.shaders.FadeOut,",
+      "    fade: $3",
+      "  }",
+      "}"
+    ],
+    "description": "Create a fade-out effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `fade`: Amount of fade"
+  },
+  "LightningJS Hole": {
+    "prefix": ["ljshole", "!holeshader"],
+    "body": [
+      "Hole: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  rect: true,",
+      "  shader: {",
+      "    type: Lightning.shaders.Hole,",
+      "    w: $3,",
+      "    h: $4,",
+      "    x: $5,",
+      "    y: $6",
+      "  }",
+      "}"
+    ],
+    "description": "Create a hole effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `w`: Width of the hole\n- `h`: Height of the hole\n- `x`: X-coordinate of the hole\n- `y`: Y-coordinate of the hole"
+  },
+
+  "LightningJS Inversion": {
+    "prefix": ["ljsinversion", "!inversionshader"],
+    "body": [
+      "Inversion: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Inversion,",
+      "    amount: $4",
+      "  }",
+      "}"
+    ],
+    "description": "Create an inversion effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `amount`: Amount of inversion"
+  },
+  "LightningJS Light 3D": {
+    "prefix": ["ljslight3d", "!light3dshader"],
+    "body": [
+      "Light3D: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Light3d,",
+      "    strength: $4,",
+      "    rx: $5",
+      "  }",
+      "}"
+    ],
+    "description": "Create a 3D lighting effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `strength`: Strength of the lighting\n- `rx`: X-rotation angle"
+  },
+
+  "LightningJS Magnifier": {
+    "prefix": ["ljsgmagnifier", "magnifiershader"],
+    "body": [
+      "Magnifier: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Magnifier,",
+      "    w: $4,",
+      "    h: $5,",
+      "    x: $6,",
+      "    y: $7",
+      "  }",
+      "}"
+    ],
+    "description": "Create a magnifier effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `w`: Width of the magnifier\n- `h`: Height of the magnifier\n- `x`: X-coordinate of the magnifier\n- `y`: Y-coordinate of the magnifier"
+  },
+  "LightningJS Perspective": {
+    "prefix": ["ljsperspective", "!perspectiveshader"],
+    "body": [
+      "Perspective: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Perspective,",
+      "    rx: $4",
+      "  }",
+      "}"
+    ],
+    "description": "Create a perspective effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `rx`: X-rotation angle"
+  },
+  "LightningJS Pixelate": {
+    "prefix": ["ljspixelate", "!pixelateshader"],
+    "body": [
+      "Pixelate: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Pixelate,",
+      "    size: $4",
+      "  }",
+      "}"
+    ],
+    "description": "Create a pixelate effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `size`: Size of the pixels"
+  },
+  "LightningJS Radial Gradient": {
+    "prefix": ["ljsradialgradient", "!radialshader"],
+    "body": [
+      "RadialGradient: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  rect: true,",
+      "  shader: {",
+      "    type: Lightning.shaders.RadialGradient,",
+      "    outerColor: $3,",
+      "    innerColor: $4",
+      "  }",
+      "}"
+    ],
+    "description": "Create a radial gradient effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `outerColor`: Color of the outer circle\n- `innerColor`: Color of the inner circle"
+  },
+  "LightningJS Rounded Rectangle": {
+    "prefix": ["ljsroundedrect", "!roundedrectshader"],
+    "body": [
+      "RoundedRectangle: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  rect: true,",
+      "  shader: {",
+      "    type: Lightning.shaders.RoundedRectangle,",
+      "    radius: $3",
+      "  }",
+      "}"
+    ],
+    "description": "Create a rounded rectangle effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `radius`: Radius of the rounded corners"
+  },
+  "LightningJS Spinner2": {
+    "prefix": ["ljsspinner2", "!spinner2shader"],
+    "body": [
+      "Spinner2: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  rect: true,",
+      "  shader: {",
+      "    type: Lightning.shaders.Spinner2,",
+      "    stroke: $3",
+      "  }",
+      "}"
+    ],
+    "description": "Create a spinner effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `stroke`: Thickness of the spinner stroke"
+  },
+  "LightningJS Vintage": {
+    "prefix": ["ljsvintage", "!vintageshader"],
+    "body": [
+      "Vintage: {",
+      "  w: $1,",
+      "  h: $2,",
+      "  src: '$3',",
+      "  shader: {",
+      "    type: Lightning.shaders.Vignette,",
+      "    magnitude: $4,",
+      "    intensity: $5",
+      "  }",
+      "}"
+    ],
+    "description": "Create a vintage/vignette effect in LightningJS\n\n- `w`: Width of the shape\n- `h`: Height of the shape\n- `src`: Source image\n- `magnitude`: Magnitude of the vignette effect\n- `intensity`: Intensity of the vignette effect"
+  },
+  "LightningJS _construct": {
+    "prefix": ["ljsconstruct", "!construct"],
+    "body": [
+      "_construct() {",
+      "  // Instance created, before spawning the template",
+      "  $1",
+      "}"
+    ],
+    "description": "Initialize an instance before spawning the template in LightningJS"
+  },
+  "LightningJS _build": {
+    "prefix": ["ljsbuild", "!build"],
+    "body": [
+      "_build() {",
+      "  // Instance created, spawned the template",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code after instance creation and template spawning in LightningJS"
+  },
+  "LightningJS _setup": {
+    "prefix": ["ljssetup", "!setup"],
+    "body": [
+      "_setup() {",
+      "  // Attached to the Render Tree, top-down (for the first time)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is attached to the Render Tree in LightningJS (top-down)"
+  },
+  "LightningJS _init": {
+    "prefix": ["ljsinit", "!init"],
+    "body": ["_init() {", "  // Attached (for the first time)", "  $1", "}"],
+    "description": "Initialize code when the instance is attached for the first time in LightningJS"
+  },
+  "LightningJS _attach": {
+    "prefix": ["ljsattach", "!attach"],
+    "body": [
+      "_attach() {",
+      "  // Attached to the Render Tree, bottom-up",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is attached to the Render Tree in LightningJS (bottom-up)"
+  },
+  "LightningJS _detach": {
+    "prefix": ["ljsdetach", "!detach"],
+    "body": ["_detach() {", "  // Detached, bottom-up", "  $1", "}"],
+    "description": "Execute code when the instance is detached from the Render Tree in LightningJS (bottom-up)"
+  },
+  "LightningJS _firstEnable": {
+    "prefix": ["ljsfirstenable", "!firstenable"],
+    "body": [
+      "_firstEnable() {",
+      "  // Enabled (for the first time)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is enabled for the first time in LightningJS"
+  },
+  "LightningJS _enable": {
+    "prefix": ["ljsenable", "!enable"],
+    "body": [
+      "_enable() {",
+      "  // Enabled (both attached and visible: true and alpha > 0)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is enabled in LightningJS (both attached and visible)"
+  },
+  "LightningJS _disable": {
+    "prefix": ["ljsdisable", "!disable"],
+    "body": [
+      "_disable() {",
+      "  // Disabled (either detached or invisible or both)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is disabled in LightningJS (either detached or invisible or both)"
+  },
+  "LightningJS _firstActive": {
+    "prefix": ["ljsfirstactive", "!firstactive"],
+    "body": [
+      "_firstActive() {",
+      "  // Activated (for the first time)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is activated for the first time in LightningJS"
+  },
+  "LightningJS _active": {
+    "prefix": ["ljsactive", "!active"],
+    "body": [
+      "_active() {",
+      "  // Activated (both enabled and on-screen)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is activated in LightningJS (both enabled and on-screen)"
+  },
+  "LightningJS _inactive": {
+    "prefix": ["ljsinactive", "!inactive"],
+    "body": [
+      "_inactive() {",
+      "  // Inactive (either detached, invisible or off-screen)",
+      "  $1",
+      "}"
+    ],
+    "description": "Execute code when the instance is inactive in LightningJS (either detached, invisible, or off-screen)"
+  },
+  "LightningJS txLoaded": {
+    "prefix": ["ljstxloaded", "!txloaded"],
+    "body": [
+      "this.tag('$1').on('txLoaded', () => {",
+      "  // Handle 'txLoaded' event",
+      "  $2",
+      "});"
+    ],
+    "description": "Handle 'txLoaded' event for the Image tag in LightningJS"
+  },
+  "LightningJS txError": {
+    "prefix": ["ljstxerror", "!txerror"],
+    "body": [
+      "this.tag('$1').on('txError', () => {",
+      "  // Handle 'txError' event",
+      "  $2",
+      "});"
+    ],
+    "description": "Handle 'txError' event for the Image tag in LightningJS"
+  },
+  "LightningJS txUnloaded": {
+    "prefix": ["ljstxunloaded", "!txunloaded"],
+    "body": [
+      "this.tag('$1').on('txUnloaded', () => {",
+      "  // Handle 'txUnloaded' event",
+      "  $2",
+      "});"
+    ],
+    "description": "Handle 'txUnloaded' event for the Image tag in LightningJS"
+  },
+  "LightningJS Storage.set": {
+    "prefix": ["ljsstorage.set", "!storageset"],
+    "body": "Storage.set('$1', $2)",
+    "description": "Set a value in the storage"
+  },
+  "LightningJS Storage.get": {
+    "prefix": ["ljsstorage.get", "!storageget"],
+    "body": "Storage.get('$1')",
+    "description": "Get a value from the storage"
+  },
+  "LightningJS Storage.remove": {
+    "prefix": ["ljsstorage.remove", "!storageremove"],
+    "body": "Storage.remove('$1')",
+    "description": "Remove a value from the storage"
+  },
+  "LightningJS Storage.clear": {
+    "prefix": ["ljsstorage.clear", "!storageclear"],
+    "body": "Storage.clear()",
+    "description": "Clear the storage"
+  },
+  "LightningJS Utils.asset": {
+    "prefix": ["ljsutils.asset", "!utilsasset"],
+    "body": "Utils.asset('$1')",
+    "description": "Get the asset path for the given file"
+  },
+  "LightningJS Application on": {
+    "prefix": ["ljsapplication.on", "!applicationon"],
+    "body": "this.application.on('$1', ($2) => {\n\t$3\n})",
+    "description": "Add an event listener to the application"
+  },
+  "LightningJS Application emit": {
+    "prefix": ["ljsapplication.emit", "!applicationemit"],
+    "body": "this.application.emit('$1', $2);",
+    "description": "Emit an event from the application"
+  },
+  "LightningJS List": {
+    "prefix": ["ljslist", "!list"],
+    "body": [
+      " spacing: $1",
+      " margin: $2",
+      "direction: $3",
+      "signals: {",
+      "onIndexChanged: $4",
+      "onRequestItems: $5",
+      "}",
+      "w: $6",
+      "h: $7",
+      "y: $8",
+      "enableRequests: $9",
+      "requestThreshold: $10",
+      "gcThreshold: $11",
+      "type: List"
+    ],
+    "description": "Create a ListTray"
+  }
+}
