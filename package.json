@@ -3,14 +3,14 @@
   "displayName": "LightningJS Snippets",
   "description": "Code Snippents for lightningJS",
   "publisher": "anand-patel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.78.0"
   },
   "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/anandpatel0123/LightningJS-Snippets"
     },
   "categories": [
     "Snippets"

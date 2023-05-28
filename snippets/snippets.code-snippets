@@ -107,6 +107,7 @@
     "body": ["this.patch({", "  $1: $2", "});"],
     "description": "Use the `patch` method in LightningJS"
   },
+
   "LightningJS GetFocused Method": {
     "prefix": ["ljsgetfocused", "!getfocused"],
     "body": ["_getFocused() {", "  return this.tag(\"$1\");", "}"],
@@ -155,14 +156,14 @@
     "description": "Use the `handleDown` method in LightningJS"
   },
   "LightningJS handleAppClose Method": {
-    "prefix": ["handleAppClose", "!happalose"],
+    "prefix": ["handleAppClose", "!handleappclose"],
     "body": ["_handleAppClose(){", " this.application.closeApp(); $1", "};"],
     "description": "Use the `handleAppClose` method in LightningJS"
   },
-  "LightningJS RouterNavigate Method": {
-    "prefix": ["RouterNavigate", "!navigate"],
-    "body": ["Router.navigate(\"$1\")"],
-    "description": "Use the `RouterNavigate` method in LightningJS"
+  "Router.navigate": {
+    "prefix": "!routerNavigate",
+    "body": ["Router.navigate(`$1`, {", "    $2: $3", "});"],
+    "description": "Navigate using the Router"
   },
 
   "LightningJS Capture Key Event": {
@@ -642,5 +643,87 @@
       "type: List"
     ],
     "description": "Create a ListTray"
+  },
+  "LightningJS TagPatch Method": {
+    "prefix": ["ljspatch", "!tagpatch"],
+    "body": ["this.tag(", "$1", ").patch({", "  $2: $3", "});"],
+    "description": "Use the `patch` method in LightningJS"
+  },
+  "LightningJS TagSetSmoot Method": {
+    "prefix": ["ljspatch", "!tagsetSmooth"],
+    "body": [
+      "this.Tag(\"$1\").setSmooth(\"$2\", $3, {",
+      "  duration: $4,",
+      "});"
+    ],
+    "description": "Use the `patch` method in LightningJS"
+  },
+  "this.tag.visible": {
+    "prefix": "!tagvisible",
+    "body": ["this.tag(\"$1\").visible = $2;"],
+    "description": "Set visibility for a tag"
+  },
+
+  "Registry.setTimeout": {
+    "prefix": "!registry-setTimeout",
+    "body": ["Registry.setTimeout(() => {", "    $1", "}, $2);"],
+    "description": "Set a timeout using the Registry"
+  },
+  "Registry.clearTimeout": {
+    "prefix": "!registry-clearTimeout",
+    "body": ["Registry.clearTimeout($1)"],
+    "description": "Clear a timeout using the Registry"
+  },
+  "Registry.clearTimeouts": {
+    "prefix": "!registry-clearTimeouts",
+    "body": ["Registry.clearTimeouts()"],
+    "description": "Clear all timeouts using the Registry"
+  },
+  "Registry.setInterval": {
+    "prefix": "!registry-setInterval",
+    "body": ["Registry.setInterval(() => {", "    $1", "}, $2)"],
+    "description": "Set an interval using the Registry"
+  },
+  "Registry.clearInterval": {
+    "prefix": "!registry-clearInterval",
+    "body": ["Registry.clearInterval($1)"],
+    "description": "Clear an interval using the Registry"
+  },
+  "Registry.clearIntervals": {
+    "prefix": "!registry-clearIntervals",
+    "body": ["Registry.clearIntervals()"],
+    "description": "Clear all intervals using the Registry"
+  },
+  "Registry.addEventListener": {
+    "prefix": "!registry-addEventListener",
+    "body": ["Registry.addEventListener(${1:target}, '${2:event}', ${3:cb})"],
+    "description": "Add an event listener using the Registry"
+  },
+  "Registry.removeEventListener": {
+    "prefix": "!registry-removeEventListener",
+    "body": [
+      "Registry.removeEventListener(${1:target}, '${2:event}', ${3:cb})"
+    ],
+    "description": "Remove an event listener using the Registry"
+  },
+  "Registry.clear": {
+    "prefix": "!registry-clear",
+    "body": ["Registry.clear()"],
+    "description": "Clear the Registry"
+  },
+  "Registry.removeEventListeners": {
+    "prefix": "!registry-removeEventListeners",
+    "body": ["Registry.removeEventListeners(${1:target})"],
+    "description": "Remove all event listeners"
+  },
+  "Registry.removeEventListeners - document.body": {
+    "prefix": "!registry-removeEventListeners-body",
+    "body": ["Registry.removeEventListeners(document.body)"],
+    "description": "Remove all event listeners on document.body"
+  },
+  "Registry.removeEventListeners - document.body - click": {
+    "prefix": "!registry-removeEventListeners-body-click",
+    "body": ["Registry.removeEventListeners(document.body, 'click')"],
+    "description": "Remove all click event listeners on document.body"
   }
 }
