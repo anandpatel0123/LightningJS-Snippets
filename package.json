@@ -3,7 +3,7 @@
   "displayName": "LightningJS Snippets",
   "description": "Code Snippents for lightningJS",
   "publisher": "anand-patel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.78.0"

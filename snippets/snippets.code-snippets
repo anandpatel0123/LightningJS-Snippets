@@ -725,5 +725,180 @@
     "prefix": "!registry-removeEventListeners-body-click",
     "body": ["Registry.removeEventListeners(document.body, 'click')"],
     "description": "Remove all click event listeners on document.body"
+  },
+  "!Router.focusWidget": {
+    "prefix": "!router-focusWidget",
+    "body": ["Router.focusWidget('$1');"],
+    "description": "Focus a widget using Router"
+  },
+  "!Router.back": {
+    "prefix": "!router-back",
+    "body": ["Router.back();"],
+    "description": "Go back using Router"
+  },
+  "!Router.focusPage": {
+    "prefix": "!router-focusPage",
+    "body": ["Router.focusPage();"],
+    "description": "Focus the current page using Router"
+  },
+  "!Router.getActiveHash": {
+    "prefix": "!router-getActiveHash",
+    "body": ["Router.getActiveHash()"],
+    "description": "Get the active hash using Router"
+  },
+  "!Router.getActivePage": {
+    "prefix": "!router-getActivePage",
+    "body": ["Router.getActivePage()"],
+    "description": "Get the active page using Router"
+  },
+  "!Router.getActiveRoute": {
+    "prefix": "!router-getActiveRoute",
+    "body": ["Router.getActiveRoute()"],
+    "description": "Get the active route using Router"
+  },
+  "!Router.getHistory": {
+    "prefix": "!router-getHistory",
+    "body": ["Router.getHistory()"],
+    "description": "Get the history using Router"
+  },
+  "!Router.getHistoryState": {
+    "prefix": "!router-getHistoryState",
+    "body": ["Router.getHistoryState()"],
+    "description": "Get the history state using Router"
+  },
+  "!Router.go": {
+    "prefix": "!router-go",
+    "body": ["Router.go($1)"],
+    "description": "Go to a specific history state using Router"
+  },
+  "!Router.isNavigating": {
+    "prefix": "!router-isNavigating",
+    "body": ["Router.isNavigating()"],
+    "description": "Check if Router is currently navigating"
+  },
+  "!Router.resume": {
+    "prefix": "!router-resume",
+    "body": ["Router.resume()"],
+    "description": "Resume Router navigation"
+  },
+  "!Router.reload": {
+    "prefix": "!router-reload",
+    "body": ["Router.reload()"],
+    "description": "Reload the current page using Router"
+  },
+  "!Router.root": {
+    "prefix": "!router-root",
+    "body": ["Router.root()"],
+    "description": "Get the root path using Router"
+  },
+  "!Settings.get": {
+    "prefix": "!settings-get",
+    "body": ["Settings.get('$1', '$2', $3)"],
+    "description": "Get a setting value using Settings"
+  },
+  "!Settings.set": {
+    "prefix": "!settings-set",
+    "body": ["Settings.set('$1', $2)"],
+    "description": "Set a setting value using Settings"
+  },
+  "!Settings.has": {
+    "prefix": "!settings-has",
+    "body": ["Settings.has('$1', '$2')"],
+    "description": "Check if a setting exists using Settings"
+  },
+  "!Settings.subscribe": {
+    "prefix": "!settings-subscribe",
+    "body": ["Settings.subscribe('$1', $2)"],
+    "description": "Subscribe to a setting change using Settings"
+  },
+  "!Settings.unsubscribe": {
+    "prefix": "!settings-unsubscribe",
+    "body": ["Settings.unsubscribe('$1', $2)"],
+    "description": "Unsubscribe from a setting change using Settings"
+  },
+  "!Settings.clearSubscribers": {
+    "prefix": "!settings-clearSubscribers",
+    "body": ["Settings.clearSubscribers()"],
+    "description": "Clear all setting subscribers using Settings"
+  },
+  "!this.tag('$1').add": {
+    "prefix": "!tag-add",
+    "body": ["this.tag('$1').add($2)"],
+    "description": "Add items to a tag"
+  },
+  "!this.tag('$1').addAt": {
+    "prefix": "!tag-addAt",
+    "body": ["this.tag('$1').addAt($2, $3)"],
+    "description": "Add items at a specific index in a tag"
+  },
+  "!this.tag('$1').removeAt": {
+    "prefix": "!tag-removeAt",
+    "body": ["this.tag('$1').removeAt($2)"],
+    "description": "Remove an item at a specific index in a tag"
+  },
+  "!this.tag('$1').remove": {
+    "prefix": "!tag-remove",
+    "body": ["this.tag('$1').remove($2)"],
+    "description": "Remove an item from a tag"
+  },
+  "!this.tag('$1').clear": {
+    "prefix": "!tag-clear",
+    "body": ["this.tag('$1').clear()"],
+    "description": "Clear all items from a tag"
+  },
+  "!this.tag('$1').requestItems": {
+    "prefix": "!tag-requestItems",
+    "body": ["this.tag('$1').requestItems($2, $3)"],
+    "description": "Request items for a tag"
+  },
+  "!this.tag('$1').setIndex": {
+    "prefix": "!tag-setIndex",
+    "body": ["this.tag('$1').setIndex($2)"],
+    "description": "Set the index of a tag"
+  },
+  "!this.tag('$1').first": {
+    "prefix": "!tag-first",
+    "body": ["this.tag('$1').first()"],
+    "description": "Go to the first item in a tag"
+  },
+  "!this.tag('$1').last": {
+    "prefix": "!tag-last",
+    "body": ["this.tag('$1').last()"],
+    "description": "Go to the last item in a tag"
+  },
+  "!this.tag('$1').next": {
+    "prefix": "!tag-next",
+    "body": ["this.tag('$1').next()"],
+    "description": "Go to the next item in a tag"
+  },
+  "!this.tag('$1').previous": {
+    "prefix": "!tag-previous",
+    "body": ["this.tag('$1').previous()"],
+    "description": "Go to the previous item in a tag"
+  },
+  "!this.tag('$1').up": {
+    "prefix": "!tag-up",
+    "body": ["this.tag('$1').up()"],
+    "description": "Move up within a tag"
+  },
+  "!this.tag('$1').down": {
+    "prefix": "!tag-down",
+    "body": ["this.tag('$1').down()"],
+    "description": "Move down within a tag"
+  },
+  "!this.tag('$1').left": {
+    "prefix": "!tag-left",
+    "body": ["this.tag('$1').left()"],
+    "description": "Move left within a tag"
+  },
+  "!this.tag('$1').right": {
+    "prefix": "!tag-right",
+    "body": ["this.tag('$1').right()"],
+    "description": "Move right within a tag"
+  },
+  "!this.tag('$1').scroll": {
+    "prefix": "!tag-scroll",
+    "body": ["this.tag('$1').scroll = $2"],
+    "description": "Set the scroll value of a tag"
   }
 }
